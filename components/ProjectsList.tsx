@@ -1,10 +1,14 @@
-import { projects } from "@/data/projects";
 import ProjectCard from "./ProjectCard";
+import { Project } from "@/data/projects"; // ⬅️ Import tipe
 
-export default function ProjectsList() {
+interface Props {
+  items: Project[]; // ⬅️ Kasih tipe untuk props
+}
+
+export default function ProjectsList({ items }: Props) {
   return (
-    <div className="mt-16">
-      {projects.map((p) => (
+    <div className="flex flex-col gap-16 w-full">
+      {items.map((p: Project) => (   // ⬅️ p juga dikasih tipe
         <ProjectCard key={p.id} project={p} />
       ))}
     </div>

@@ -58,6 +58,8 @@ const handleScrollRight = () => {
           <Image src="/PostgreSQL.png" width={80} height={80} alt="PostgreSQL" />
           <Image src="/vs.png" width={80} height={80} alt="VS" />
           <Image src="/WPF.png" width={80} height={80} alt="WPF" />
+          <Image src="/next.svg" width={80} height={80} alt="Next.js" />
+          <Image src="/html.png" width={80} height={80} alt="HTML" />
         </div>
 
         {/* ARROW BUTTON */}

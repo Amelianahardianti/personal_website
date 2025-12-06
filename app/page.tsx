@@ -3,6 +3,8 @@ import WhatIDo from "@/components/WhatIDo";
 import TechStack from "@/components/TechStack"
 import ProjectsSection from "@/components/ProjectsSection";
 import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
+
 
 
 export default function Home() {
@@ -13,6 +15,7 @@ export default function Home() {
         <TechStack />
           <ProjectsSection />
           <Contact/>
+          <Footer /> 
     </main>
   );
 }

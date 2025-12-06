@@ -1,52 +1,74 @@
 /* components/Contact.tsx */
 
-import Link from "next/link";
-import { Mail, Linkedin, Github } from "lucide-react";
+"use client";
+
+import { useState } from "react";
+import Image from "next/image";
 
 export default function Contact() {
-  return (
-    <section
-      id="contact"
-      className="w-full flex justify-center mt-32 px-4 mb-32"
-    >
-      <div className="w-[1200px] bg-white border border-[#D9D9D9] rounded-2xl p-12 shadow-sm">
-        
-        {/* TITLE */}
-        <h2 className="text-3xl font-semibold text-[#92A8D1]">
-          Contact Me
-        </h2>
+  const [copied, setCopied] = useState(false);
 
-        <p className="text-gray-600 mt-2 mb-8 max-w-lg">
-          I'm open to collaboration, internship opportunities, or just a friendly chat. 
-          Feel free to reach out anytime! 😊
+  const email = "amelianautari@gmail.com";
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(email);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1500);
+  };
+
+  return (
+      <section id="contact" className="w-full flex justify-center mt-32 px-4 mb-32">
+       <div className="w-[1200px] flex flex-col items-center text-center">
+
+        {/* SMALL LABEL */}
+        <span className="text-xs bg-[#D0E4F5] text- [#4B5563] px-4 py-1 rounded-full">
+          Get in touch
+        </span>
+
+        {/* BIG TEXT */}
+        <p className="text-gray-700 max-w-[700px] leading-relaxed mt-10 ">
+          What’s next? Feel free to reach out to me if you're looking for 
+          a collab, have a query, or simply want to connect.
         </p>
 
-        {/* CONTACT BUTTONS */}
-        <div className="flex flex-wrap gap-6 mt-8">
-          
-          <Link
-            href="mailto:amelianahardianti@gmail.com"
-            className="flex items-center gap-3 px-6 py-3 border rounded-xl bg-[#F7CAC9] text-white hover:bg-[#e7b2b1] transition"
-          >
-            <Mail size={20} /> Email Me
-          </Link>
+        {/* EMAIL BOX */}
+        <div className="flex items-center gap-4 border border-[#D9D9D9] rounded-xl px-6 py-4 w-fit bg-[#fff] shadow-sm mt-10">
+          <Image src="/Mail.svg" width={20} height={20} alt="mail" />
 
-          <Link
-            href="https://linkedin.com/in/amelianahardianti"
-            target="_blank"
-            className="flex items-center gap-3 px-6 py-3 border rounded-xl bg-[#92A8D1] text-white hover:bg-[#7b93bb] transition"
-          >
-            <Linkedin size={20} /> LinkedIn
-          </Link>
+          <span className="text-lg text-gray-800 font-medium">
+            {email}
+          </span>
 
-          <Link
-            href="https://github.com/Amelianahardianti"
-            target="_blank"
-            className="flex items-center gap-3 px-6 py-3 border rounded-xl bg-black text-white hover:bg-gray-800 transition"
+          <button
+            onClick={handleCopy}
+            className="text-[#92A8D1] hover:underline text-sm"
           >
-            <Github size={20} /> GitHub
-          </Link>
+            {copied ? "Copied!" : "Copy"}
+          </button>
         </div>
+
+        {/* FOOTER LINE */}
+        <p className="text-gray-500 text-sm mt-10">
+          You may also find me on these platforms!
+        </p>
+
+        {/* SOCIAL ICONS */}
+        <div className="flex gap-4 mt-5">
+
+          <a href="https://linkedin.com/in/amelianahardiantiutari" target="_blank">
+            <Image src="/Linkedin.svg" width={22} height={22} alt="LinkedIn" />
+          </a>
+
+          <a href="https://github.com/Amelianahardianti" target="_blank">
+            <Image src="/Githubb.svg" width={22} height={22} alt="GitHub" />
+          </a>
+
+          <a href="https://instagram.com/amelianahar_" target="_blank">
+            <Image src="/Instagram.svg" width={22} height={22} alt="Instagram" />
+          </a>
+
+        </div>
+
       </div>
     </section>
   );

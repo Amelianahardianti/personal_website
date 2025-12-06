@@ -7,37 +7,50 @@ interface Project {
   link: string;
   category: string;
   description: string;
+  slug: string;
 }
+
 
 export default function ProjectCard({ project }: { project: Project }) {
   return (
     <div className="flex gap-6 items-start mb-16">
 
-      {/* IMAGE CARD */}
-      <div className="relative">
-        <Image
-          src={project.image}
-          alt={project.title}
-          width={350}
-          height={200}
-          className="rounded-md object-cover border border-[#f3caca]"
-        />
+      {/* WRAP SEMUA CARD, tapi TANPA nested <a> */}
+      <Link href={`/projects/${project.slug}`} className="flex gap-6 items-start">
 
-        {/* LINK ICON */}
-        <Link
-          href={project.link}
-          target="_blank"
-          className="absolute top-3 right-3 bg-[#92A8D1] p-2 rounded-md"
-        >
-          <Image src="/ArrowUp.png" width={20} height={20} alt="visit" />
-        </Link>
-      </div>
+        {/* IMAGE */}
+        <div className="relative">
+          <Image
+            src={project.image}
+            alt={project.title}
+            width={280}
+            height={180}
+            className="rounded-xl object-cover border"
+          />
+        </div>
 
-      {/* TEXT */}
-      <div className="max-w-lg">
-        <p className="text-sm font-semibold text-gray-700">{project.category}</p>
-        <h3 className="text-3xl font-bold mt-1">{project.title}</h3>
-        <p className="mt-3 text-gray-600 leading-relaxed">{project.description}</p>
+      </Link>
+
+      {/* RIGHT CONTENT */}
+      <div className="flex-1">
+
+        <p className="text-sm text-gray-400">{project.category}</p>
+        <h3 className="text-xl font-semibold">{project.title}</h3>
+        <p className="text-gray-500 mt-1">{project.description}</p>
+
+        {/* ICON BUTON — DI LUAR LINK UTAMA!!! */}
+        <div className="mt-3">
+          {project.link && (
+            <a
+              href={project.link}
+              target="_blank"
+              className="inline-block text-[#92A8D1] hover:underline"
+            >
+              Visit →
+            </a>
+          )}
+        </div>
+
       </div>
     </div>
   );
