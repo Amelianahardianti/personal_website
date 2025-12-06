@@ -22,15 +22,20 @@ export default function Navbar() {
       {/* MENU ITEMS */}
       <div className="flex items-center gap-8 text-gray-700 text-sm font-medium">
         <Link href="/">Home</Link>
-        <Link href="#about-me">About Me</Link>
-        <Link href="#projects">Projects</Link>
-        <Link href="#contact">Contact</Link>
+        <Link href="/#about-me">About Me</Link>
+        <Link href="/#projects">Projects</Link>
+        <Link href="/#contact">Contact</Link>
       </div>
 
       {/* DOWNLOAD CV BUTTON */}
-      <button className="bg-[#E19C9B] text-white px-5 py-2 rounded-lg text-sm hover:opacity-90 transition">
+      <a
+        href="/Ameliana_cv.pdf"
+        download
+        className="bg-[#E19C9B] text-white px-5 py-2 rounded-lg text-sm hover:opacity-90 transition"
+      >
         Download CV
-      </button>
+      </a>
+
     </nav>
   );
 }

@@ -1,6 +1,25 @@
+"use client";
 import Image from "next/image";
+import { useRef, useState } from "react";
 
 export default function Hero() {
+
+  const audioRef = useRef<HTMLAudioElement>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const toggleMusic = () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    if (isPlaying) {
+      audio.pause();
+      setIsPlaying(false);
+    } else {
+      audio.play();
+      setIsPlaying(true);
+    }
+  };
+
   return (
     <section className="relative w-full flex justify-center mt-28 px-4">
 
@@ -22,6 +41,18 @@ export default function Hero() {
               An undergraduate student of Informatics Engineering at<br />
               Universitas Gadjah Mada.
             </p>
+
+          <button
+            onClick={toggleMusic}
+            className="flex items-center gap-2 px-4 py-2 bg-[#F7CAC9] rounded-xl text-white font-semibold mt-5 hover:opacity-90 transition"
+          >
+            <Image src="/Musicc.png" width={20} height={20} alt="music" />
+            {isPlaying ? "Stop Music" : "Play Music"}
+          </button>
+
+          {/* AUDIO ELEMENT */}
+          <audio ref={audioRef} src="/music.mp3" loop />
+        
 
         </div>
 
