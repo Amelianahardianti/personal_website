@@ -23,8 +23,8 @@ export default function Navbar() {
       <div className="flex items-center gap-8 text-gray-700 text-sm font-medium">
         <Link href="/">Home</Link>
         <Link href="#about-me">About Me</Link>
-        <Link href="/projects">Projects</Link>
-        <Link href="/contact">Contact</Link>
+        <Link href="#projects">Projects</Link>
+        <Link href="#contact">Contact</Link>
       </div>
 
       {/* DOWNLOAD CV BUTTON */}

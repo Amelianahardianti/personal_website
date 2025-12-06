@@ -18,10 +18,11 @@ export default function Hero() {
           <h2 className="text-2xl font-semibold text-black mb-3">Hi I am</h2>
           <h1 className="text-5xl font-bold text-[#92A8D1]">Ameliana</h1>
 
-          <p className="mt-6 text-gray-700 text-lg leading-relaxed">
-            Undergraduate Student of Informatic Engineering at<br />
-            Universitas Gadjah Mada
-          </p>
+            <p className="mt-6 text-gray-700 text-lg leading-relaxed">
+              An undergraduate student of Informatics Engineering at<br />
+              Universitas Gadjah Mada.
+            </p>
+
         </div>
 
         {/* IMAGE */}

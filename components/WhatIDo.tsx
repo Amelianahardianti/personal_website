@@ -35,7 +35,8 @@ export default function WhatIDo() {
         <div className="max-w-xs">
           <h2 className="text-2xl font-semibold text-[#92A8D1]">What I do</h2>
           <p className="text-gray-700 mt-2 leading-relaxed">
-            MAIN MAIN MAIN MAIN MAIN
+            I build Android apps, web platforms, and desktop systems with a focus on
+            performance and great user experience.
           </p>
         </div>
 
@@ -49,12 +50,19 @@ export default function WhatIDo() {
           >
             <ServiceCard
               title="Android Development"
-              desc="You will receive a customized plan for your fitness journey, and lots of support."
+              desc="I build Android applications with clean UI, intuitive user experience, and scalable architecture using Kotlin and modern Android development practices."
             />
-            <ServiceCard
-              title="Web Development"
-              desc="You will receive a customized plan for your fitness journey, and lots of support."
-            />
+
+              <ServiceCard
+                title="Web Development"
+                desc="I develop responsive and user-friendly web applications using modern frameworks like Next.js and Tailwind, focusing on accessibility and performance."
+              />
+
+                <ServiceCard
+                title="Desktop App Development"
+                desc="I create feature-rich desktop applications using C# and WPF, focusing on performance and clean architecture."
+              />
+
           </div>
 
           {/* ARROW */}
