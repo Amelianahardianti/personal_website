@@ -24,3 +24,11 @@ export default function RootLayout({
     </html>
   );
 }
+
+export const metadata = {
+  title: "Ameliana Portfolio",
+  icons: {
+    icon: "/iconn.png", // atau png kamu
+  },
+};
+

@@ -4,6 +4,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
 
 export default function Contact() {
   const [copied, setCopied] = useState(false);
@@ -56,7 +57,7 @@ export default function Contact() {
         <div className="flex gap-4 mt-5">
 
           <a href="https://linkedin.com/in/amelianahardiantiutari" target="_blank">
-            <Image src="/Linkedin.svg" width={22} height={22} alt="LinkedIn" />
+           <img src="/Linkedin.svg" width="22" height="22" alt="LinkedIn" />
           </a>
 
           <a href="https://github.com/Amelianahardianti" target="_blank">

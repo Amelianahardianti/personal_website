@@ -1,3 +1,5 @@
+"use client";
+
 import ProjectCard from "./ProjectCard";
 import { Project } from "@/data/projects"; // ⬅️ Import tipe
 
